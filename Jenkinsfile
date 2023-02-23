@@ -8,8 +8,7 @@ pipeline{
         }
         stage('Install playwright') {
             steps {
-                sh 'npm i -D @playwight/test'
-                sh 'npx playwright install'
+                sh 'npm install'
             }
         }
     }

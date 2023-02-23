@@ -1,14 +1,14 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
+    agent {
+        docker { image 'node' }
+    }
 
     stages {
         stage('Install playwright') {
             steps {
-                sh '''
-                    npm i -D @playwight/test
-                    npx playwright install
-                    '''
+                sh 'npm i -D @playwight/test'
+                sh 'npx playwright install'
             }
         }
         stage('Test') {

@@ -9,6 +9,7 @@ pipeline{
         stage('Install playwright') {
             steps {
                 sh 'npm install'
+                sh 'npx playwright install'
             }
         }
     }

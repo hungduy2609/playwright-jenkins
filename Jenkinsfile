@@ -1,8 +1,6 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent {
-        docker { image 'node' }
-    }
+    agent any
 
     stages {
         stage('Install playwright') {

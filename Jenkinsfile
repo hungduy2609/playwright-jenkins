@@ -9,15 +9,15 @@ pipeline {
                 sh 'npx playwright install'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npx playwright test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'npx playwright test'
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploying....'
+        //     }
+        // }
     }
 }

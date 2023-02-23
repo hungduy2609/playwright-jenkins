@@ -12,5 +12,10 @@ pipeline{
                 sh 'npx playwright install'
             }
         }
+        stage("Run test"){
+            steps{
+                sh 'npm run run-all'
+            }
+        }
     }
 }

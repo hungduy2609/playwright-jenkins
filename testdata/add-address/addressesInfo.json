@@ -1,0 +1,28 @@
+[
+    {
+        "testcaseName": "with mandatory fields",
+        "firstName": "Duy",
+        "lastName": "Le",
+        "email": "duytest2@gmail.com",
+        "country": "Vietnam",
+        "city": "Ho Chi Minh",
+        "address1": "Tan Binh",
+        "zipPostalCode": "1111",
+        "phoneNumber": "0123456789"
+    },
+    {
+        "testcaseName": "with full fields",
+        "firstName": "Duy",
+        "lastName": "Le",
+        "email": "duytest2@gmail.com",
+        "company": "Nashtech",
+        "country": "Vietnam",
+        "stateProvice": "Hồ Chí Minh",
+        "city": "Hồ Chí Minh",
+        "address1": "Tan Binh",
+        "address2": "Binh Tan",
+        "zipPostalCode": "1111",
+        "phoneNumber": "0123456789",
+        "faxNumber": "2228888"
+    }
+]

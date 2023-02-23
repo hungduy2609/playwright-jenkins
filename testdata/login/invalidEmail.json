@@ -1,0 +1,14 @@
+[
+    {
+        "reason": "empty email",
+        "email": "",
+        "password": "123456",
+        "errorMessage": "Please enter your email"
+    },
+    {
+        "reason": "wrong format email",
+        "email": "duyletest",
+        "password": "123456",
+        "errorMessage": "Wrong email"
+    }
+]

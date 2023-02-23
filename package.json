@@ -1,0 +1,19 @@
+{
+    "name": "nopcommerce",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "generate-report": "allure generate allure-results -o allure-report --clean",
+        "open-report": "allure serve",
+        "run-all": "npx playwright test --workers=1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.30.0",
+        "allure-playwright": "^2.0.0",
+        "playwright": "^1.30.0"
+    }
+}

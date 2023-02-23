@@ -1,0 +1,23 @@
+[
+    {
+        "reason": "empty password",
+        "email": "duyletest@gmail.com",
+        "password": "",
+        "loginErrorMessage": "Login was unsuccessful. Please correct the errors and try again.",
+        "reasonErrorMessage": "The credentials provided are incorrect"
+    },
+    {
+        "reason": "wrong account",
+        "email": "duyletesttest@gmail.com",
+        "password": "",
+        "loginErrorMessage": "Login was unsuccessful. Please correct the errors and try again.",
+        "reasonErrorMessage": "No customer account found"
+    },
+    {
+        "reason": "wrong password",
+        "email": "duyletest@gmail.com",
+        "password": "123456666",
+        "loginErrorMessage": "Login was unsuccessful. Please correct the errors and try again.",
+        "reasonErrorMessage": "The credentials provided are incorrect"
+    }
+]

@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-	  "run-all": "npx playwright test --workers=1"
+        "run-all": "npx playwright test --workers=1",
         "allure:report": "allure generate allure-results -o allure-report --clean",
         "allure:clear": "if exist allure-results rmdir /q /s allure-results && if exist allure-report rmdir /q /s allure-report",
         "open-report": "allure serve"

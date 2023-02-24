@@ -1,8 +1,9 @@
 import { Page } from "@playwright/test";
 import { Address } from "../interface/Address";
 import BasePage from "./base.page";
+import { capitalize } from "../utils/stringUtilities";
 
-export default class AddAddressPage extends BasePage {
+export default class EditAddressPage extends BasePage {
     private inputFirstName = "#Address_FirstName";
     private inputLastName = "#Address_LastName";
     private inputEmail = "#Address_Email";
@@ -16,14 +17,6 @@ export default class AddAddressPage extends BasePage {
     private inputPhoneNumber = "#Address_PhoneNumber";
     private inputFaxNumber = "#Address_FaxNumber";
     private buttonSave = "//button[text()='Save']";
-
-    private firstNameErrorMessage = "#Address_FirstName-error";
-    private lastNameErrorMessage = "#Address_LastName-error";
-    private emailErrorMessage = "#Address_Email-error";
-    private cityErrorMessage = "#Address_City-error";
-    private addressErrorMessage = "#Address_Address1-error";
-    private zipPostalCodeErrorMessage = "#Address_ZipPostalCode-error";
-    private phoneNumberErrorMessage = "#Address_PhoneNumber-error";
 
     constructor(page: Page) {
         super(page);
@@ -88,18 +81,27 @@ export default class AddAddressPage extends BasePage {
     public async enterInformation(newAddress: any) {
         let newAddressInfo: Address = newAddress;
 
-        await this.enterFirstName(newAddressInfo.firstName);
-        await this.enterLastName(newAddressInfo.lastName);
-        await this.enterEmail(newAddressInfo.email);
-        await this.enterCompany(newAddressInfo.company);
-        await this.enterCountry(newAddressInfo.country);
-        await this.enterStateProvince(newAddressInfo.stateProvince);
-        await this.enterCity(newAddressInfo.city);
-        await this.enterAddress1(newAddressInfo.address1);
-        await this.enterAddress2(newAddressInfo.address2);
-        await this.enterZipPostalCode(newAddressInfo.zipPostalCode);
-        await this.enterPhoneNumber(newAddressInfo.phoneNumber);
-        await this.enterFaxNumber(newAddressInfo.faxNumber);
+        const fieldList = [
+            'firstName',
+            'lastName',
+            'email',
+            'company',
+            'country',
+            'stateProvince',
+            'city',
+            'address1',
+            'address2',
+            'zipPostalCode',
+            'phoneNumber',
+            'faxNumber'
+        ];
+
+        fieldList.forEach((fieldName: string) => {
+            if (newAddressInfo[fieldName]) {
+                const functionName = `enter${capitalize(fieldName)}`;
+                this[functionName](newAddressInfo[fieldName]);
+            }
+        });
 
         await this.clickSave();
     }
@@ -108,31 +110,26 @@ export default class AddAddressPage extends BasePage {
         await this.clickElement(this.buttonSave);
     }
 
-    public get firstNameErrorElement(){
-        return this.getElement(this.firstNameErrorMessage);
-    }
+    public async editAddress(editAddress: any) {
+        let editAddressInfo: Address = editAddress;
+        const fieldList = [
+            'email',
+            'company',
+            'country',
+            'stateProvince',
+            'city',
+            'address1',
+            'address2',
+            'zipPostalCode',
+            'phoneNumber',
+            'faxNumber'
+        ];
 
-    public get lastNameErrorElement(){
-        return this.getElement(this.lastNameErrorMessage);
-    }
-
-    public get emailErrorElement(){
-        return this.getElement(this.emailErrorMessage);
-    }
-
-    public get addressErrorElement(){
-        return this.getElement(this.addressErrorMessage);
-    }
-
-    public get cityErrorElement(){
-        return this.getElement(this.cityErrorMessage);
-    }
-
-    public get zipPostalCodeErrorElement(){
-        return this.getElement(this.zipPostalCodeErrorMessage);
-    }
-
-    public get phoneNumberErrorElement(){
-        return this.getElement(this.phoneNumberErrorMessage);
+        fieldList.forEach((fieldName: string) => {
+            if (editAddressInfo[fieldName]) {
+                const functionName = `enter${capitalize(fieldName)}`;
+                this[functionName](editAddressInfo[fieldName]);
+            }
+        });
     }
 }

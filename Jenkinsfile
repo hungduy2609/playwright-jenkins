@@ -16,6 +16,11 @@ pipeline{
             steps{
                 sh 'npm run run-all'
             }
+            post{
+                success{
+                    archiveArtifacts(artifacts: 'result.png', followSymlinks: false)
+                }
+            }
         }
     }
 }

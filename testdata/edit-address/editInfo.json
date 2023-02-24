@@ -1,0 +1,42 @@
+[
+    {
+        "testcaseName": "email",
+        "email": "abc@gmail.com"
+    },
+    {
+        "testcaseName": "company",
+        "company": "ABC Company"
+    },
+    {
+        "testcaseName": "country",
+        "company": "Congo"
+    },
+    {
+        "testcaseName": "state",
+        "stateProvince": "Bình Dương"
+    },
+    {
+        "testcaseName": "city",
+        "city": "Thu Dau Mot"
+    },
+    {
+        "testcaseName": "address 1",
+        "address1": "address 1"
+    },
+    {
+        "testcaseName": "address 2",
+        "address2": "address 2"
+    },
+    {
+        "testcaseName": "zip Postal code",
+        "zipPostalCode": "2222"
+    },
+    {
+        "testcaseName": "phone number",
+        "address2": "0123456789"
+    },
+    {
+        "testcaseName": "fax number",
+        "address2": "1122"
+    }
+]

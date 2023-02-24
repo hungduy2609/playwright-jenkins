@@ -62,7 +62,6 @@ test.describe("Register function", () => {
         await registerPage.clickRegister();
 
         let errorMessage = await registerPage.getPasswordErrorMessage.textContent();
-        console.log(errorMessage);
         expect(errorMessage).toBe("must meet the following rules: must have at least 6 characters");
     });
 });

@@ -32,7 +32,6 @@ test.describe("Change password function", () => {
     test("Verify that user can change password", async () => {
         email = emailRandom();
         await registerPage.gotoRegisterPage();
-        registerPage.clickRegister;
         await registerPage.register(usersInfo[0], email);
         await loginPage.login(email, usersInfo[0].password);
 

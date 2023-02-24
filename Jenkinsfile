@@ -14,11 +14,12 @@ pipeline{
         }
         stage("Run test"){
             steps{
+                sh 'npm run allure:clear'
                 sh 'npm run run-all'
             }
             post{
                 success{
-                    archiveArtifacts(artifacts: 'result.png', followSymlinks: false)
+                    sh 'npm run allure:report'
                 }
             }
         }

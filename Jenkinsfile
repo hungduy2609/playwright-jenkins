@@ -20,7 +20,7 @@ pipeline{
         }
         stage("Publish Report"){
             steps{
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
     }

@@ -17,9 +17,17 @@ pipeline{
                 sh 'npm run allure:clear'
                 sh 'npm run run-all'
             }
+        }
+        stage("Publish Report"){
             post{
                 success{
-                    sh 'npm run allure:report'
+                    publishHTML (target : [allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'reports',
+                        reportFiles: 'myreport.html',
+                        reportName: 'My Reports',
+                        reportTitles: 'The Report'])
                 }
             }
         }

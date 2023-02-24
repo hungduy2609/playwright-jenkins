@@ -15,7 +15,7 @@ pipeline{
         stage("Run test"){
             steps{
                 sh 'npm run allure:clear'
-                sh 'npm run run-all'
+                sh 'npx playwright test login.test.ts'
             }
         }
         stage("Publish Report"){
@@ -23,7 +23,7 @@ pipeline{
                 publishHTML (target : [allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'reports',
+                    reportDir: 'build',
                     reportFiles: 'myreport.html',
                     reportName: 'My Reports',
                     reportTitles: 'The Report'])

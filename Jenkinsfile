@@ -20,13 +20,7 @@ pipeline{
         }
         stage("Publish Report"){
             steps{
-                publishHTML (target : [allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'build',
-                    reportFiles: 'myreport.html',
-                    reportName: 'My Reports',
-                    reportTitles: 'The Report'])
+                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             }
         }
     }
